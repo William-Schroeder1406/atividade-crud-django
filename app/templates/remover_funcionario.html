@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Remover Funcionário</title>
+
+    <style>
+        html {
+            margin: 2%;
+        }
+    </style>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+
+    <h2 class="mb-4 text-danger">⚠️ Confirmar remoção</h2>
+
+    <p>Tem certeza que deseja remover o funcionário abaixo?</p>
+
+    <ul>
+        <li><strong>Nome:</strong> {{ object.nome }}</li>
+        <li><strong>CPF:</strong> {{ object.cpf }}</li>
+        <li><strong>Email:</strong> {{ object.email }}</li>
+    </ul>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">
+            Confirmar Remoção
+        </button>
+        <button type="button" class="btn btn-secondary" onClick="history.go(-1)">
+            Cancelar
+        </button>
+    </form>
+
+</body>
+</html>

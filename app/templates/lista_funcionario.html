@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dados do Funcionário</title>
+
+    <style>
+        html {
+            margin: 2%;
+        }
+    </style>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+
+    <h2 class="mb-4">👤 Dados do Funcionário</h2>
+
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" value="{{ fun.nome }}" readonly>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">CPF</label>
+            <input type="text" class="form-control" value="{{ fun.cpf }}" readonly>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">E-mail</label>
+            <input type="text" class="form-control" value="{{ fun.email }}" readonly>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Remuneração</label>
+            <input type="text" class="form-control" value="R$ {{ fun.remuneracao }}" readonly>
+        </div>
+
+        <button type="button" class="btn btn-success" onClick="history.go(-1)">
+            Voltar
+        </button>
+    </div>
+
+</body>
+</html>

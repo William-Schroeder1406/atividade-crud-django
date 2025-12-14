@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Funcionário</title>
+
+    <style>
+        html {
+            margin: 2%;
+        }
+    </style>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+
+    <h2 class="mb-4">🧾 Formulário de Funcionário</h2>
+
+    <form method="post" class="col-md-6">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary">
+            Salvar
+        </button>
+        <button type="button" class="btn btn-secondary" onClick="history.go(-1)">
+            Voltar
+        </button>
+    </form>
+
+</body>
+</html>
